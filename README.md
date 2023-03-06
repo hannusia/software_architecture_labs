@@ -1,4 +1,4 @@
-# software_architecture_labs
+# Lab1: Basic architecture of the micro-services
 
 ## Requirements
 
