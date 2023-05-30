@@ -4,7 +4,7 @@ from flask import Flask, request
 import hazelcast
 import sys
 
-clients = hazelcast.HazelcastClient()
+clients = hazelcast.HazelcastClient
 
 client = hazelcast.HazelcastClient(
     cluster_name="my-cluster",
