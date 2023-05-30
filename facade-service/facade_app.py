@@ -8,9 +8,14 @@ import random
 import socket
 import hazelcast
 
-logging_list = ['8000', '8001', '8002']
-messag_list = '8800,8801'
+# logging_list = sys.argv[1:]
+n = len(sys.argv[1])
+logging_list = sys.argv[1][1:n - 1]
+logging_list = logging_list.split(',')
+n = len(sys.argv[2])
+messag_list = sys.argv[2][1:n - 1]
 messag_list = messag_list.split(',')
+# messag_list = sys.argv[1:]
 
 clients = hazelcast.HazelcastClient
 
@@ -19,6 +24,7 @@ client = hazelcast.HazelcastClient(
 )
 
 my_queue = client.get_queue('my-queue').blocking()
+# , static_folder='/facade'
 app = Flask(__name__)
 
 
